@@ -21,3 +21,6 @@
     </div>
 </div>
 @endsection
+
+<a href="{{route('product')}}">Producten</a>
+

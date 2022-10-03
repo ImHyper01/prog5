@@ -18,9 +18,10 @@ Route::get('/', function () {
 });
 
 Route::get('/home', 'App\Http\Controllers\home@index');
-
+Route::get('/product', 'App\Http\Controllers\product@index');
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/product', [App\Http\Controllers\product::class, 'index'])->name('product');
