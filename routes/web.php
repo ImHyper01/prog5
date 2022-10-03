@@ -14,14 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('inlog');
 });
 
 Route::get('/home', 'App\Http\Controllers\home@index');
 Route::get('/product', 'App\Http\Controllers\product@index');
+Route::get('/inlog', 'App\Http\Controllers\inlog@index');
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/product', [App\Http\Controllers\product::class, 'index'])->name('product');
+
