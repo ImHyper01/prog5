@@ -18,12 +18,12 @@ Route::get('/', function () {
 });
 
 Route::get('/home', 'App\Http\Controllers\home@index');
-Route::get('/product', 'App\Http\Controllers\product@index');
+Route::get('/productController', 'App\Http\Controllers\product@index');
 Route::get('/inlog', 'App\Http\Controllers\inlog@index');
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/product', [App\Http\Controllers\product::class, 'index'])->name('product');
+Route::get('/productController', [App\Http\Controllers\productController::class, 'index'])->name('productController');
 
