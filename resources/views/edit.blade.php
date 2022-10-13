@@ -1,4 +1,4 @@
-<form action="{{route('create.post')}}" method="post">
+<form action="{{route('post.product', ['id' => $id])}}" method="post">
     @csrf {{ csrf_field() }}
     <label for="title">name</label>
     <input type="text" name="name">
