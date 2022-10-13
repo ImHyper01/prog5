@@ -20,10 +20,10 @@ Route::get('/', function () {
 Route::get('/home', 'App\Http\Controllers\home@index');
 Route::get('/productController', 'App\Http\Controllers\product@index');
 Route::get('/inlog', 'App\Http\Controllers\inlog@index');
+Route::get('/create', 'App\Http\Controllers\create@index');
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/productController', [App\Http\Controllers\productController::class, 'index'])->name('productController');
-

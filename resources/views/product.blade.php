@@ -6,9 +6,6 @@
     <li>{{$product['price']}}</li>
 @endforeach
 
-
-
-
-
 <a href="{{route('home')}}">Terug naar home page</a>
+
 
