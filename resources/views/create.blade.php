@@ -6,3 +6,4 @@
     <input type="number" name="price">
     <button>Send</button>
 </form>
+

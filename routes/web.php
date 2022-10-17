@@ -35,3 +35,5 @@ Route::post('/create', [App\Http\Controllers\productController::class, 'postCrea
 Route::get('/deleteProduct/{id}', [App\Http\Controllers\productController::class, 'deleteProduct'])->name('deleteProduct');
 Route::get('/editProduct/{id}', [App\Http\Controllers\productController::class, 'editProduct'])->name('edit.product');
 Route::post('/editProduct/{id}', [App\Http\Controllers\productController::class, 'postProduct'])->name('post.product');
+Route::get('/admin/login', 'App\Http\Controllers\AdminLoginController@showLoginForm')->name('admin.login');
+Route::post('/admin/login', 'App\Http\Controllers\AdminLoginController@login')->name('admin.login.submit');
