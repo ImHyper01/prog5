@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <form action="{{route('post.product', ['id' => $id])}}" method="post">
     @csrf {{ csrf_field() }}
     <label for="title">name</label>
@@ -6,4 +9,7 @@
     <input type="number" name="price">
     <button>Send</button>
 </form>
-
+<p>
+    <a href="{{route('productController')}}">Terug naar product page</a>
+</p>
+@endsection

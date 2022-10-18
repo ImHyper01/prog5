@@ -42,6 +42,15 @@ class productController extends Controller
         $product->save();
         return redirect()->route('productController');
     }
+
+    public function admin(){
+        if (auth()->guest()){
+            abort(403);
+
+        }
+
+    }
+
 }
 
 

@@ -29,11 +29,10 @@ Route::get('/create', function (){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/productController', [App\Http\Controllers\productController::class, 'index'])->name('productController');
+Route::get('/productController', [App\Http\Controllers\productController::class, 'index'])->name('productController')->middleware('admin');
 Route::get('/create', [App\Http\Controllers\productController::class, 'create'])->name('create');
 Route::post('/create', [App\Http\Controllers\productController::class, 'postCreate'])->name('create.post');
 Route::get('/deleteProduct/{id}', [App\Http\Controllers\productController::class, 'deleteProduct'])->name('deleteProduct');
 Route::get('/editProduct/{id}', [App\Http\Controllers\productController::class, 'editProduct'])->name('edit.product');
 Route::post('/editProduct/{id}', [App\Http\Controllers\productController::class, 'postProduct'])->name('post.product');
-Route::get('/admin/login', 'App\Http\Controllers\AdminLoginController@showLoginForm')->name('admin.login');
-Route::post('/admin/login', 'App\Http\Controllers\AdminLoginController@login')->name('admin.login.submit');
+
