@@ -52,7 +52,8 @@ class productController extends Controller
     public function search(){
 
         $search_text = $_GET['search'];
-        $products = products::where('name', 'like', '%' . $search_text. '%')->get();
+        $products = products::where('name', 'like', '%' . $search_text. '%')
+            ->orWhere('price', 'like', '%' . $search_text . '%')->get();
 
         return view('product', compact('products'));
     }
