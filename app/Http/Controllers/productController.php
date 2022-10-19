@@ -43,12 +43,18 @@ class productController extends Controller
         return redirect()->route('productController');
     }
 
-    public function admin(){
-        if (auth()->guest()){
-            abort(403);
+//    public function admin(){
+//        if (auth()->guest()){
+//            abort(403);
+//
+//        }
 
-        }
+    public function search(){
 
+        $search_text = $_GET['search'];
+        $products = products::where('name', 'like', '%' . $search_text. '%')->get();
+
+        return view('product', compact('products'));
     }
 
 }
