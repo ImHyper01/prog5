@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h2>Hier komen alle producten</h2>
+<h2>Producten</h2>
 
 @if(Auth::user()?->admin == 1)
 <a href="{{route('create')}}">Create</a>
