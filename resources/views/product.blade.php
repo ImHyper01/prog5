@@ -15,7 +15,6 @@
         <li>naam: {{$product['name']}}</li>
         <li>prijs: {{$product['price']}}</li>
 
-
     <a href="{{route('deleteProduct', ['id' => $product['id']])}}" >delete</a>
     <a href="{{route('edit.product', ['id' => $product['id']])}}" >edit</a>
 @endforeach

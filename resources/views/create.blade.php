@@ -13,3 +13,4 @@
     <a href="{{route('productController')}}">Terug naar product page</a>
 </p>
 @endsection
+

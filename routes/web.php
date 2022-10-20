@@ -36,13 +36,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/productController', [App\Http\Controllers\productController::class, 'index'])->name('productController');
 
-Route::get('/create', [App\Http\Controllers\productController::class, 'create'])->name('create');
-Route::post('/create', [App\Http\Controllers\productController::class, 'postCreate'])->name('create.post');
+Route::get('/create', [App\Http\Controllers\productController::class, 'create'])->name('create')->middleware('admin');
+Route::post('/create', [App\Http\Controllers\productController::class, 'postCreate'])->name('create.post')->middleware('admin');
 
-Route::get('/deleteProduct/{id}', [App\Http\Controllers\productController::class, 'deleteProduct'])->name('deleteProduct');
+Route::get('/deleteProduct/{id}', [App\Http\Controllers\productController::class, 'deleteProduct'])->name('deleteProduct')->middleware('admin');
 
-Route::get('/editProduct/{id}', [App\Http\Controllers\productController::class, 'editProduct'])->name('edit.product');
-Route::post('/editProduct/{id}', [App\Http\Controllers\productController::class, 'postProduct'])->name('post.product');
+Route::get('/editProduct/{id}', [App\Http\Controllers\productController::class, 'editProduct'])->name('edit.product')->middleware('admin');
+Route::post('/editProduct/{id}', [App\Http\Controllers\productController::class, 'postProduct'])->name('post.product')->middleware('admin');
 
 
 

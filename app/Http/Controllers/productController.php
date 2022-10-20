@@ -43,11 +43,6 @@ class productController extends Controller
         return redirect()->route('productController');
     }
 
-//    public function admin(){
-//        if (auth()->guest()){
-//            abort(403);
-//
-//        }
 
     public function search(){
 
