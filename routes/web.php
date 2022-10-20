@@ -44,5 +44,7 @@ Route::get('/deleteProduct/{id}', [App\Http\Controllers\productController::class
 Route::get('/editProduct/{id}', [App\Http\Controllers\productController::class, 'editProduct'])->name('edit.product')->middleware('admin');
 Route::post('/editProduct/{id}', [App\Http\Controllers\productController::class, 'postProduct'])->name('post.product')->middleware('admin');
 
+Route::get('buy', [App\Http\Controllers\productController::class, 'buy'])->name('buy');
+
 
 

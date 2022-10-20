@@ -44,13 +44,18 @@ class productController extends Controller
     }
 
 
-    public function search(){
+    public function search(Request $request){
 
-        $search_text = $_GET['search'];
+        $search_text = $request->query('search');
         $products = products::where('name', 'like', '%' . $search_text. '%')
             ->orWhere('price', 'like', '%' . $search_text . '%')->get();
 
         return view('product', compact('products'));
+    }
+
+    public function buy(){
+
+        return view('buy');
     }
 
 }
