@@ -23,7 +23,7 @@ Route::get('/home', 'App\Http\Controllers\home@index');
 Route::get('/productController', 'App\Http\Controllers\product@index');
 Route::get('/inlog', 'App\Http\Controllers\inlog@index');
 Route::get('/search', '\App\Http\Controllers\productController@search');
-
+Route::get('/filter', '\App\Http\Controllers\productController@filter');
 
 
 Route::get('/create', function (){
@@ -41,10 +41,11 @@ Route::post('/create', [App\Http\Controllers\productController::class, 'postCrea
 
 Route::get('/deleteProduct/{id}', [App\Http\Controllers\productController::class, 'deleteProduct'])->name('deleteProduct')->middleware('admin');
 
-Route::get('/editProduct/{id}', [App\Http\Controllers\productController::class, 'editProduct'])->name('edit.product')->middleware('admin');
-Route::post('/editProduct/{id}', [App\Http\Controllers\productController::class, 'postProduct'])->name('post.product')->middleware('admin');
+Route::get('/editProduct/{id}', [App\Http\Controllers\productController::class, 'editProduct'])->name('edit.products')->middleware('admin');
+Route::post('/editProduct/{id}', [App\Http\Controllers\productController::class, 'postProduct'])->name('post.products')->middleware('admin');
 
 Route::get('buy', [App\Http\Controllers\productController::class, 'buy'])->name('buy');
 
+Route::get('/admin', [App\Http\Controllers\adminController::class, 'index'])->name('admin')->middleware('admin');
 
-
+Route::get('/status', [App\Http\Controllers\adminController::class, 'status'])->name('status')->middleware('admin');

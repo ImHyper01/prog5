@@ -9,7 +9,7 @@ class productController extends Controller
 {
     public function index() {
         $products = products::all();
-        return view('product', compact('products'));
+        return view('products', compact('products'));
     }
 
     public function create() {
@@ -50,15 +50,20 @@ class productController extends Controller
         $products = products::where('name', 'like', '%' . $search_text. '%')
             ->orWhere('price', 'like', '%' . $search_text . '%')->get();
 
-        return view('product', compact('products'));
+        return view('products', compact('products'));
+    }
+
+
+    public function filter(Request $request){
+
+        $filter_menu = $request->query('filter');
+        $products = products::where('price', 'like', '%' . $filter_menu. '%')->get();
+
+        return view('products', compact('products'));
     }
 
     public function buy(){
 
         return view('buy');
     }
-
 }
-
-
-
