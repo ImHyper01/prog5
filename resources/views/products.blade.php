@@ -14,12 +14,11 @@
 
     <form method="get" action="{{url('/filter')}}">
         <select name="filter">
-            @foreach($products as $product)
-            <option value="{{$product->id}}">{{$product->price}}</option>
+            @foreach($products as $row)
+            <option value="{{$row->price}}">{{$row->price}}</option>
             @endforeach
         </select>
-        <button type="submit" class="btn btn-primary">Zoek</button>
-{{--        @dd('');--}}
+        <button type="submit" class="btn btn-primary">Filter</button>
     </form>
 
 @foreach ($products as $product)
